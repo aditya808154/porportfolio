@@ -1,4 +1,36 @@
 /* --- Base Navbar Upgrade --- */
+.logo-wrapper {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.logo-link {
+  display: block;
+  text-decoration: none;
+}
+
+.site-logo {
+  height: 100px; /* Logo ki height fix rakhein taaki navbar ka size na bigde */
+  width: auto;   /* Width auto rakhne se aspect ratio sahi rahega */
+  object-fit: contain;
+  transition: transform 0.3s ease;
+  display: block;
+}
+
+/* Hover effect for logo */
+.site-logo:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+/* Responsive: Mobile par logo ka size thoda chota kar dein */
+@media (max-width: 576px) {
+  .site-logo {
+    height: 38px;
+  }
+}
+
 .navbar {
   position: fixed;
   top: 0;
