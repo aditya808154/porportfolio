@@ -1,0 +1,221 @@
+.cert-section {
+  padding: 10px 0 !important;
+  background: var(--bg-color);
+}
+
+.cert-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-top: 50px;
+}
+
+.cert-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  overflow: hidden;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative; /* Base for absolute details */
+  height: 350px; /* Fixed height for pop-up effect */
+}
+
+/* Image Container - Default State */
+.cert-img-container {
+  position: relative;
+  height: 100%; /* Cover full card */
+  width: 100%;
+  overflow: hidden;
+}
+
+.cert-img-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: 0.6s ease;
+}
+
+/* Overlay with View Button */
+.cert-overlay {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: 0.4s ease;
+  z-index: 5;
+}
+
+/* Hover Effects */
+.cert-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(170, 59, 255, 0.25);
+}
+
+.cert-card:hover .cert-img-container img {
+  transform: scale(1.1);
+  filter: blur(2px);
+}
+
+.cert-card:hover .cert-overlay {
+  opacity: 1;
+}
+
+/* Details Section - Animated to Pop Up */
+.cert-details {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 25px;
+  background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+  transform: translateY(100%); /* Hidden by default */
+  transition: 0.5s ease;
+  z-index: 10;
+  pointer-events: none; /* Click overlay instead */
+}
+
+.cert-card:hover .cert-details {
+  transform: translateY(0); /* Pops up on hover */
+}
+
+.cert-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.verify-icon {
+  color: #00d2ff;
+}
+
+.cert-details h3 {
+  font-size: 1.2rem;
+  color: #fff; /* White for readability on dark overlay */
+  margin: 0;
+}
+
+.org-name {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.9rem;
+  margin: 5px 0 15px 0;
+}
+
+.cert-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 15px;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.cert-date {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.award-icon {
+  color: #ffb400;
+}
+
+.view-cert-btn {
+  background: var(--accent);
+  color: white;
+  padding: 12px 24px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transform: translateY(20px);
+  transition: 0.4s ease;
+}
+
+.cert-card:hover .view-cert-btn {
+  transform: translateY(-20px); /* Moves up with details */
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .cert-grid {
+    grid-template-columns: 1fr;
+    padding: 0 15px;
+  }
+  .cert-card {
+      height: 300px;
+  }
+}
+
+/* --- Modal Overlay (Full Screen Background) --- */
+.cert-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.95);
+  backdrop-filter: blur(15px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+  cursor: zoom-out;
+  padding: 20px;
+}
+
+/* --- Large Pop-up Image --- */
+.full-cert-image {
+  max-width: 90%;
+  max-height: 85vh;
+  border-radius: 15px;
+  box-shadow: 0 0 50px rgba(170, 59, 255, 0.3);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  object-fit: contain;
+}
+
+/* --- Close Button for Modal --- */
+.modal-close-btn {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  background: var(--accent);
+  color: white;
+  border: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  transition: 0.3s;
+  z-index: 10001;
+}
+
+.modal-close-btn:hover {
+  transform: rotate(90deg) scale(1.1);
+  background: #ff4d4d;
+}
+
+/* Card changes to show it's clickable */
+.cert-card {
+  cursor: pointer;
+}
+
+/* Mobile Fix for Modal */
+@media (max-width: 768px) {
+  .full-cert-image {
+    max-width: 100%;
+  }
+  .modal-close-btn {
+    top: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+  }
+}

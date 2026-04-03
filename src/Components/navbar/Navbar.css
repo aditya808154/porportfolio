@@ -1,0 +1,149 @@
+/* --- Base Navbar Upgrade --- */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 2000;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  padding: 10px 0;
+}
+
+/* Scroll hone par navbar ka style change */
+.navbar-scrolled {
+  background-color: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(15px);
+  padding: 5px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 70px;
+}
+
+/* --- Ultra Modern Logo --- */
+.logo-wrapper {
+  cursor: pointer;
+  position: relative;
+}
+
+.logo {
+  font-size: 1.6rem;
+  font-weight: 900;
+  letter-spacing: -1.5px;
+  display: flex;
+  align-items: center;
+  color: var(--text-h);
+}
+
+.logo-sub {
+  color: var(--accent);
+  margin-left: 1px;
+}
+
+.logo-dot-container {
+  position: relative;
+  margin-left: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-dot {
+  width: 6px;
+  height: 6px;
+  background-color: var(--accent);
+  border-radius: 50%;
+  z-index: 2;
+}
+
+.logo-dot-pulse {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background-color: var(--accent);
+  border-radius: 50%;
+  opacity: 0.3;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); opacity: 0.4; }
+  100% { transform: scale(2.5); opacity: 0; }
+}
+
+/* --- Navigation Links --- */
+.nav-menu {
+  display: flex;
+  gap: 40px;
+  list-style: none;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: var(--text);
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: var(--transition);
+}
+
+.nav-link:hover {
+  color: var(--text-h);
+}
+
+/* Hover Dot Indicator */
+.nav-link::before {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  width: 4px;
+  height: 4px;
+  background-color: var(--accent);
+  border-radius: 50%;
+  transform: translateX(-50%) scale(0);
+  transition: var(--transition);
+}
+
+.nav-link:hover::before {
+  transform: translateX(-50%) scale(1);
+}
+
+/* --- Premium CTA Button --- */
+.nav-cta-premium {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--text-h); /* Dark background for contrast */
+  color: white !important;
+  padding: 12px 24px;
+  border-radius: 100px; /* Pill shape */
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-decoration: none;
+  overflow: hidden;
+  position: relative;
+}
+
+.nav-cta-premium svg {
+  transition: transform 0.3s ease;
+}
+
+.nav-cta-premium:hover {
+  background: var(--accent);
+  transform: translateY(-2px);
+}
+
+.nav-cta-premium:hover svg {
+  transform: translate(2px, -2px);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .nav-menu { display: none; }
+  .logo { font-size: 1.3rem; }
+}

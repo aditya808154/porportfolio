@@ -1,0 +1,308 @@
+/* --- Optimized Responsive Hero Section --- */
+
+.hero-section {
+  padding: 100px 0;
+  padding-bottom: 20px !important;
+  /* Navbar height ko minus karke screen par fit */
+  min-height: calc(100vh - 80px); 
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  /* Index.css variables ka use */
+  background: var(--bg-color);
+  background-image: radial-gradient(circle at 10% 20%, var(--accent-bg) 0%, transparent 50%);
+}
+
+.hero-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.hero-content {
+  flex: 1.2;
+  z-index: 2;
+}
+
+/* Badge Animation */
+.badge {
+  background: var(--accent-bg);
+  color: var(--accent);
+  padding: 6px 14px;
+  border-radius: 50px;
+  font-size: 13px;
+  font-weight: 600;
+  border: 1px solid var(--accent-border);
+  display: inline-flex;
+  margin-bottom: 15px;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(170, 59, 255, 0.4); }
+  70% { box-shadow: 0 0 0 8px rgba(170, 59, 255, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(170, 59, 255, 0); }
+}
+
+.hero-content h1 {
+  font-size: 3.5rem; /* Desktop size */
+  color: var(--text-h);
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 25px;
+}
+
+.text-gradient {
+  background: linear-gradient(90deg, var(--accent), #ff3bdf, var(--accent));
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shine 3s linear infinite;
+}
+
+@keyframes shine { 
+  to { background-position: 200% center; } 
+}
+
+.hero-content p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 35px;
+  color: var(--text-body);
+  max-width: 550px;
+}
+
+/* Buttons System */
+.hero-btns {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 40px;
+}
+
+.btn-primary, .btn-secondary {
+  padding: 14px 28px;
+  border-radius: 12px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  font-size: 1rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: #fff !important;
+  box-shadow: 0 8px 20px -5px rgba(170, 59, 255, 0.4);
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px);
+  filter: brightness(1.1);
+}
+
+.btn-secondary {
+  border: 1px solid var(--border);
+  background: var(--card-bg);
+  color: var(--text-h);
+}
+
+.btn-secondary:hover { 
+  background: var(--accent-bg); 
+  border-color: var(--accent); 
+  color: var(--accent);
+}
+
+/* Tech Stack */
+.tech-stack {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.tech-stack span {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--text-h);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.stack-icons {
+    display: flex;
+    gap: 12px;
+}
+
+.stack-icons img { 
+  height: 35px; 
+  /* filter: grayscale(1);
+  transition: 0.3s; */
+}
+
+.stack-icons img:hover {
+    filter: grayscale(0);
+}
+
+/* Hero Image Card */
+.hero-image {
+  flex: 0.8;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.image-card {
+  width: 100%;
+  max-width: 400px;
+  height: 280px;
+  background: var(--card-bg);
+  border-radius: 24px;
+  position: relative;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  overflow: visible;
+}
+
+.image-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 24px;
+}
+
+.glass-morph {
+  position: absolute;
+  right: -20px;
+  bottom: -20px;
+  background: var(--card-bg);
+  backdrop-filter: blur(12px);
+  padding: 15px 20px;
+  border-radius: 15px;
+  border: 1px solid var(--accent-border);
+  color: var(--accent);
+  font-family: 'Fira Code', monospace;
+  font-size: 0.8rem;
+  z-index: 5;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+/* --- MEDIA QUERIES --- */
+
+/* Tablets */
+@media (max-width: 992px) {
+  .hero-content h1 { font-size: 2.8rem; }
+  .image-card { max-width: 320px; height: 240px; }
+}
+
+/* Small Tablets */
+@media (max-width: 768px) {
+  .hero-wrapper {
+    flex-direction: column;
+    text-align: center;
+    padding-top: 40px;
+  }
+  .hero-content p { margin: 0 auto 30px auto; text-align: left; }
+  .hero-btns, .tech-stack { justify-content: center; }
+  .hero-image { margin-top: 50px; }
+}
+
+/* Phones */
+@media (max-width: 576px) {
+  .hero-section {
+    padding: 60px 0;
+    min-height: auto;
+  }
+  
+  /* Phone par image ko completely remove kiya */
+  .hero-image {
+    display: none !important;
+  }
+  
+  .hero-content h1 { 
+    font-size: 2.4rem; 
+    margin-top: 10px;
+  }
+
+  .hero-btns {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .btn-primary, .btn-secondary {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .tech-stack {
+    flex-direction: column;
+    gap: 15px;
+  }
+}
+
+
+/* Buttons System */
+.hero-btns {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 40px;
+}
+
+.btn-primary, .btn-secondary {
+  padding: 14px 28px;
+  border-radius: 12px;
+  font-weight: 700; /* Bold for professional look */
+  text-decoration: none;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  font-size: 1rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: #fff !important;
+  border: 1px solid var(--accent);
+  box-shadow: 0 10px 20px -5px rgba(170, 59, 255, 0.4);
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 25px -5px rgba(170, 59, 255, 0.5);
+  filter: brightness(1.1);
+}
+
+.btn-secondary {
+  border: 1.5px solid var(--border);
+  background: transparent; /* Clean outline look */
+  color: var(--text-h);
+}
+
+.btn-secondary:hover {
+  background: var(--accent-bg);
+  border-color: var(--accent);
+  color: var(--accent) !important;
+  transform: translateY(-3px);
+}
+
+/* Phone Responsive Buttons */
+@media (max-width: 576px) {
+  .hero-btns {
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+  }
+
+  .btn-primary, .btn-secondary {
+    width: 100%; /* Full width on mobile */
+    padding: 16px;
+  }
+}

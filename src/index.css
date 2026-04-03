@@ -1,0 +1,46 @@
+:root {
+  /* Aapka Custom Color Palette */
+  --text: #6b6375;
+  --text-h: #08060d;
+  --bg: #fff;
+  --border: #e5e4e7;
+  --code-bg: #f4f3ec;
+  --accent: #aa3bff;
+  --accent-bg: rgba(170, 59, 255, 0.1);
+  --accent-border: rgba(170, 59, 255, 0.5);
+  --social-bg: rgba(244, 243, 236, 0.5);
+  
+  /* System Defaults */
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', -apple-system, sans-serif;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+/* Aapka specific Layout System */
+.container {
+  max-width: 1300px !important;
+  padding: 30px 20px !important;
+  margin: 0 auto !important;
+}
+
+h1, h2, h3, h4 {
+  color: var(--text-h);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+/* Smooth Transitions */
+a, button {
+  transition: var(--transition);
+}
