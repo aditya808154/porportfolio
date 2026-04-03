@@ -19,7 +19,7 @@ const Navbar = () => {
         <div className="logo-wrapper">
           <a href="/" className="logo-link">
             {" "}
-            {/* Link dene se logo par click karne par home page par jayega */}
+            
             <img src={logo} alt="Nageshwar Prajapati" className="site-logo" />
           </a>
           <div className="logo">
