@@ -1,16 +1,38 @@
-# React + Vite
+# 👨‍💻 Personal Portfolio - Nageshwar Prajapati
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is my official personal portfolio website, designed to showcase my skills, projects, and professional journey as a developer. It acts as a digital resume for recruiters and clients.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🚀 Live Demo
+**View the Portfolio:** [https://porportfolio-asik.vercel.app/](https://porportfolio-asik.vercel.app/)
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 📖 Project Overview
+The goal of this project was to create a professional and responsive digital space to highlight my expertise in Full Stack Development. It features a modern UI with a focus on performance and easy navigation.
 
-## Expanding the ESLint configuration
+![Portfolio Preview](https://res.cloudinary.com/dt6swsun6/image/upload/q_auto/f_auto/v1775122457/Java_developer_working_with_tech_icons-removebg-preview_tzbsv0.png)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Key Features:
+*   **Project Gallery:** A comprehensive list of my web development projects with live links.
+*   **Skills Section:** Highlighting my technical stack (Java, Spring Boot, React, etc.).
+*   **Contact Integration:** Easy ways for recruiters to reach out to me via email or social links.
+*   **Fully Responsive:** Optimized for a seamless experience on all devices (Mobile/Desktop).
+*   **Fast Performance:** Built using modern tools to ensure quick loading times.
+
+---
+
+## 🛠 Tech Stack Used
+*   **Frontend:** React.js (Vite)
+*   **Styling:** CSS3 / Tailwind CSS (Glassmorphism & 3D Effects)
+*   **Deployment:** Vercel
+*   **Animations:** Framer Motion / Smooth Scroll effects
+
+---
+
+## 📂 How to Run this Project
+
+1. **Clone the repository:**
+   ```bash
+   git clone [https://github.com/your-username/my-portfolio.git](https://github.com/your-username/my-portfolio.git)
